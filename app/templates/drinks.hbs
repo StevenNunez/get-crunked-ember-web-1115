@@ -1,0 +1,13 @@
+{{#each model as |drink|}}
+<p>
+  {{drink}}
+</p>
+{{/each}}
+
+{{#if canShowAddDrink}}
+  {{input value=newDrink enter="addDrink"}}
+  <a href="#" {{action "hideAddDrink"}}>Hide Form</a>
+{{else}}
+  <a href="#" {{action "showAddDrink"}}>Show Form</a>
+{{/if}}
+{{outlet}}
