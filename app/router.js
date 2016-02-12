@@ -11,6 +11,7 @@ Router.map(function() {
   });
   this.route('drinks', function() {
     this.route('drink', {path: "/:drink_id"});
+    this.route('new');
   });
 });
 
