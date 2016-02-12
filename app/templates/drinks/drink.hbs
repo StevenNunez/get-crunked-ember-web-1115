@@ -8,3 +8,9 @@
 <p>
   {{model.instructions}}
 </p>
+<ul>
+
+{{#each model.proportions as |proportion|}}
+  <li><strong>{{proportion.amount}}</strong> {{proportion.ingredient}}</li>
+{{/each}}
+</ul>

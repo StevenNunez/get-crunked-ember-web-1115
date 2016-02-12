@@ -15,5 +15,13 @@
     <label for="drink-source">Source</label>
     {{input value=model.source class="form-control" id="drink-source"}}
   </div>
+  <button type="button" name="button" {{action "addIngredient"}}>Add a new ingredient</button>
+  {{model.proportions.length}}
+  {{#each model.proportions as |proportion|}}
+    <div class="form-group">
+      {{input value=proportion.amount class="form-control" placeholder="1 cup"}}
+      {{input value=proportion.ingredient class="form-control" placeholder="Vodka"}}
+    </div>
+  {{/each}}
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
