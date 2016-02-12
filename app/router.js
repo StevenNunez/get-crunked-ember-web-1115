@@ -9,7 +9,9 @@ Router.map(function() {
   this.route('about', function() {
     this.route('developers');
   });
-  this.route('drinks');
+  this.route('drinks', function() {
+    this.route('drink', {path: "/:drink_id"});
+  });
 });
 
 export default Router;

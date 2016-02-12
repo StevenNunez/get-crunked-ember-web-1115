@@ -1,13 +1,20 @@
-{{#each model as |drink|}}
-<p>
-  {{drink.name}}
-</p>
-{{/each}}
+<div class="row">
+  <div class="col-xs-3">
+    {{#each model as |drink|}}
+    <p>
+      {{link-to drink.name "drinks.drink" drink}}
+    </p>
+    {{/each}}
 
-{{#if canShowAddDrink}}
-  {{input value=newDrink enter="addDrink"}}
-  <a href="#" {{action "hideAddDrink"}}>Hide Form</a>
-{{else}}
-  <a href="#" {{action "showAddDrink"}}>Show Form</a>
-{{/if}}
-{{outlet}}
+    {{#if canShowAddDrink}}
+      {{input value=newDrink enter="addDrink"}}
+      <a href="#" {{action "hideAddDrink"}}>Hide Form</a>
+    {{else}}
+      <a href="#" {{action "showAddDrink"}}>Show Form</a>
+    {{/if}}
+
+    </div>
+    <div class="col-xs-9">
+      {{outlet}}
+    </div>
+</div>
