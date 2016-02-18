@@ -4,6 +4,11 @@
       <li>{{link-to "Home" "index"}}</li>
       <li>{{link-to "See all drinks" "drinks"}}</li>
       <li>{{link-to "About" "about"}}</li>
+      {{#if session.isAuthenticated}}
+        <li><button {{action "logout"}}>Logout</button></li>
+      {{else}}
+        <li>{{link-to 'Login' 'login'}}</li>
+      {{/if}}
     </ul>
     <h2 id="title">Welcome to Get Crunked</h2>
   </div>
